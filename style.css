@@ -1,119 +1,143 @@
 @font-face {
-  font-family: "Inter";
-  src: url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+  font-family: "font-1";
+  src: url(./font/Inter-VariableFont_slnt\wght.ttf);
 }
 * {
-  font-family: "Inter", sans-serif;
   margin: 0;
   padding: 5px;
-  box-sizing: border-box; 
+  font-family: "font-1", Arial;
+  box-sizing: border-box;
 }
 li {
   list-style: none;
 }
-p {
-  font-style: 0.8rem;
+a,
+a:visited {
+  color: white;
+  text-decoration: none;
+  transition: 0.3s;
+}
+a:hover {
+  font-size: 1.3rem;
+  color: #2128bd;
 }
 body {
+  background: rgb(27, 27, 27);
+  color: rgb(246, 246, 246);
   min-height: 100vh;
-  background: #151515;
-  color: whitesmoke;
 }
-/********* NAVBAR  ************/
 nav {
   display: grid;
   grid-template-columns: 50% 50%;
-  padding: 10px 20px;
+  margin: 10px 20px;
+  height: 50px;
 }
 nav ul {
-  display: grid;
-  grid-template-columns: 33% 33% 33%;
+  display: flex;
+  justify-content: space-between;
 }
-/************  HEADER  ************/
-.header {
-  display: grid;
-  grid-template-columns: 50% 50%;
-  margin: 30px auto;
-  align-items: center;
+section {
+  display: flex;
+}
+.main-left {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 h1 {
   font-size: 5rem;
-  font-weight: 500;
 }
-.header h3 {
-  color: #474DFF;
+.main-left h2 {
+  color: #474dff;
   font-size: 1.8rem;
 }
-.header-right {
+.main-left p {
+  font-size: 0.8rem;
+}
+.main-right {
   width: 50%;
 }
-#modem {
+.main-right img {
   width: 100%;
 }
-/************ INFOS  **************/
-.infos {
+footer {
+  background: rgb(7, 7, 7);
   display: grid;
-  grid-template-columns: 30% 70%;
-  background: rgb(7, 6, 6);
+  grid-template-columns: 33% 67%;
   border-radius: 10px;
 }
-button {
-  background-color: #474DFF;
-  color: whitesmoke;
-  border: none;
-  width: 150px;
+.footer-left ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  min-height: 160px;
+}
+.footer-left li {
+  background: #474dff;
+  width: 170px;
   padding: 10px 0;
+  text-align: center;
   border-radius: 10px;
   letter-spacing: 1px;
-  margin: 5px;
   font-weight: bold;
-  display: block;
 }
-.investors {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 86%;
-}
-.img-container {
+.footer-right ul {
   display: flex;
   justify-content: space-around;
-  width: 100%;
+  align-items: center;
+  min-height: 160px;
 }
-.img-container img {
+
+footer img {
   height: 60px;
 }
 
-/******************  MEDIA QUERIES  ******************/
-@media screen and (max-width: 870px) {
+/* ************** RESPONSIVE *************** */
+
+/* Tablette */
+@media (max-width: 800px) {
   h1 {
     font-size: 2.5rem;
   }
-  .header-left-container h3 {
+  .main-left h2 {
     font-size: 1rem;
   }
   p {
     font-size: 0.7rem;
   }
-}
-@media screen and (max-width: 600px) {
-  nav {
-    grid-template-columns: 33% 66%;
+  footer {
+    grid-template-columns: 40% 60%;
   }
-  nav ul {
+  footer img {
+    height: 35px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 570px) {
+  nav {
+    margin: 10px 5px;
+  }
+  nav li {
     font-size: 0.7rem;
   }
-  .header {
+  section {
+    flex-direction: column;
+  }
+  .main-left,
+  .main-right {
+    width: 100%;
+  }
+  .main-right img {
+    width: 65%;
+    margin: 0 auto;
     display: block;
   }
-  .infos {
-    display: block;
-    text-align: center;
+  footer {
+    grid-template-columns: 1fr;
   }
-  .btn-container button {
-    margin: 10px auto;
-  }
-  .img-container img {
-    height: 40px;
+  .footer-left ul {
+    align-items: center;
   }
 }
